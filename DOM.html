@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id2 {
+            border: 2px solid black;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img id="id1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8C191JdCh-vLaAF570ZX04NesIpQl7WQUtRcl0pkDuw&s=10" width="300" height="200" /><br><br>
+    <button onclick="change()">Change</button>
+    <button onclick="undo()">Undo</button>
+    <button onclick="inc()">+</button>
+    <button onclick="dec()">-</button>
+    <button onclick="add()">Add Attribute</button><br><br>
+    <div id="id2">
+
+    </div><br><br>
+    <input type="text" id="input" value="todo"/>
+    <button id="add1">+</button>
+    <ul id="id3">
+        
+    </ul>
+    <script>
+        function change() {
+            document.querySelector("#id1").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7zDMYnGheNT1l7pEW3R5N3Uf4--yCjRprCG9W5WQ58g&s=10"
+        }
+        function undo() {
+            document.querySelector("#id1").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8C191JdCh-vLaAF570ZX04NesIpQl7WQUtRcl0pkDuw&s=10"
+        }
+        function inc() {
+            pic=document.querySelector("#id1")
+            w=pic.width
+            h=pic.height
+            pic.width=w+10
+            pic.height=h+10
+        }
+        function dec() {
+            pic=document.querySelector("#id1")
+            w=pic.width
+            h=pic.height
+            pic.width=w-10
+            pic.height=h-10
+        }
+        function add() {
+            document.querySelector("#id1").setAttribute('alt','no-image')
+            document.querySelector("#id1").setAttribute('class','c1')
+        }
+        let e1=document.createElement("h2")
+        e1.innerHTML="Dynamic"
+        let d1=document.querySelector("#id2")
+        d1.appendChild(e1)
+        let e2=document.createElement("h3")
+        e2.innerHTML="Position"
+        d1.replaceChild(e2,e1)
+        d1.removeChild(e2)
+        let add1=document.querySelector("#add1")
+        let input=document.querySelector("#input")
+        let ul=document.querySelector("#id3")
+        add1.addEventListener('click',()=>{
+            data=input.value
+            let li=document.createElement('li')
+            li.innerHTML=data
+            ul.appendChild(li)
+            input.value=""
+        })
+    </script>
+</body>
+</html>
