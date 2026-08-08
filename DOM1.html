@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id1 {
+            border: 2px solid black;
+            width: 300px;
+            height: 300px;
+            padding-left: 20px;
+        }
+        #add {
+            background-color: blueviolet;
+        }
+        #id2 {
+            border: 1px solid grey;
+            background-color: gainsboro;
+            margin-bottom: 20px;
+            margin-right: 30px;
+        }
+        #id3 {
+            border: 2px solid black;
+            width: 200px;
+            height: 200px;
+            align-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="id1">
+        <h2>Todo App</h2>
+        <input type="text" id="input" value="Add your new todo"/>
+        <button id="add">+</button><br><br>
+        <div id="id2">
+
+        </div>
+    </div><br><br>
+    <div id="id3">
+        <h2>Time: <span id="hr">00</span> : <span id="min">00</span> : <span id="sec">00</span></h2>
+        <button onclick="cin()">Check In</button>
+        <button onclick="cout()">Check Out</button><br><br>
+        <p>Latest Check In: <span id="in"></span></p>
+        <p>Latest Check Out: <span id="out"></span></p>
+    </div><br><br>
+    <button id="b">Get OTP</button><br><br>
+    <script>
+        let add=document.querySelector("#add")
+        let input=document.querySelector("#input")
+        let d1=document.querySelector("#id2")
+        add.addEventListener('click',()=>{
+            data=input.value
+            let div=document.createElement('div')
+            div.innerHTML=data
+            d1.appendChild(div)
+            input.value=""
+        })
+        /*const d=new Date().toLocaleString()
+        const m=new Date().getMonth()
+        const ms=new Date().getMilliseconds()
+        const y=new Date().getFullYear()
+        const h=new Date().getHours()
+        const min=new Date().getMinutes()
+        const s=new Date().getSeconds()
+        document.write(d+"<br/>")
+        document.write(m+1+"<br/>")
+        document.write(ms+"<br/>")
+        document.write(y+"<br/>")
+        document.write(h+"<br/>")
+        document.write(min+"<br/>")
+        document.write(s+"<br/>")*/
+        const d=new Date().toLocaleString()
+        document.write("Date: "+d+"<br/>")
+        function clock() {
+            let h=new Date().getHours()
+            let m=new Date().getMinutes()
+            let s=new Date().getSeconds()
+            document.getElementById("hr").innerHTML=h
+            document.getElementById("min").innerHTML=m
+            document.getElementById("sec").innerHTML=s
+        }
+        setInterval(clock,1000)
+        function cin() {
+            let t=new Date().toLocaleTimeString()
+            document.getElementById("in").innerHTML=t
+        }
+        function cout() {
+            let t=new Date().toLocaleTimeString()
+            document.getElementById("out").innerHTML=t
+        }
+        document.write(Math.sqrt(5556)+"<br/>")
+        document.write(Math.pow(68,24)+"<br/>")
+        document.write(Math.random()*100+"<br/>")
+        document.write(Math.exp(11)+"<br/>")
+        otp=0
+        let b=document.querySelector("#b")
+        b.addEventListener('click',()=>{
+            otp=Math.floor(Math.random()*1000000)
+            alert("The otp is: "+otp)
+        })
+    </script>
+</body>
+</html>
