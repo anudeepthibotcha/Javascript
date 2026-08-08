@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pop {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: cornflowerblue;
+            width: 400px;
+            height: fit-content;
+            padding: 10px;
+            position: absolute;
+            left: 35%;
+            display: none;
+        }
+        #b {
+            margin-left: 165px;
+        }
+        #b button {
+            color: black;
+            background-color: coral;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        #close {
+            color: white;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            right: 3px;
+        }
+    </style>
+</head>
+<body>
+    <button id="id1">Click</button>
+    <button id="id2">Save</button>
+    <input type="text" id="id3" />
+    <script>
+        let b1=document.getElementById("id1")
+        b1.addEventListener('click',function clicked() {
+            alert("Submitted Successfully")
+        })
+        let b2=document.getElementById("id2")
+        b2.addEventListener('click',()=>alert("Saved Successfully"))
+        b2.addEventListener('mouseover',()=>b2.style.backgroundColor="orange")
+        b2.addEventListener('mouseout',()=>b2.style.backgroundColor="green")
+        let i1=document.getElementById("id3")
+        i1.addEventListener('focus',()=>i1.style.backgroundColor="blue")
+    </script><br><br>
+    <div id="pop">
+        <button id="close">X</button>
+        <h2>Hello User</h2>
+        <p>Do you want to see this page?</p>
+        <div id="b">
+            <button id="id4">No Thanks and Exit</button>
+            <button id="id5">Continue</button>
+        </div>
+    </div>
+    <button id="id6">Show</button>
+    <script>
+        let b3=document.getElementById("id6")
+        let pb=document.getElementById("pop")
+        b3.addEventListener('click',()=>pb.style.display="block")
+        let b4=document.getElementById("id4")
+        b4.addEventListener('click',()=>pb.style.display="none")
+        let b5=document.getElementById("close")
+        b5.addEventListener('click',()=>pb.style.display="none")
+    </script>
+</body>
+</html>
