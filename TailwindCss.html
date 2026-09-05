@@ -1,45 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Defines the character encoding used by the webpage -->
     <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive on different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title displayed in the browser tab -->
     <title>Document</title>
+
+    <!-- Imports Tailwind CSS from CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
+<!--
+    Body styling:
+    flex         -> Enables flexbox layout
+    justify-center -> Centers content horizontally
+    items-center   -> Centers content vertically
+    h-[100vh]      -> Makes body height equal to the full viewport height
+-->
 <body class="flex justify-center items-center h-[100vh]">
+
+    <!--
+        JavaScript example:
+        This section is currently commented out, so it will not execute.
+
+        sessionStorage -> Stores data for the current browser session
+        localStorage   -> Stores data persistently in the browser
+        document.write -> Displays content directly on the webpage
+    -->
+
     <!--<script>
+        // Stores a username in a JavaScript variable
         let name="Hatty"
+
+        // Stores a city name in a JavaScript variable
         let city="Rotra"
+
+        // Saves the username in session storage
         sessionStorage.setItem("user",name)
+
+        // Saves the city in local storage
         localStorage.setItem("place",city)
+
+        // Displays the username on the webpage
         document.write("Username: "+name+"<br/>")
     </script>
+
+    <!-- Link to another HTML page -->
     <a href="file2.html">Login</a>-->
+
+    <!--
+        Main container for all profile cards.
+        flex -> Places cards in a row
+        gap-10 -> Adds space between the cards
+    -->
     <div class="flex gap-10">
+
+        <!-- ================= PROFILE CARD 1 ================= -->
+
+        <!-- Main profile card -->
         <div class="border-2 border-solid border-black w-[300px] h-[350px] text-center flex flex-col items-center">
+
+            <!--
+                Header section of the profile card
+                bg-blue-500 -> Blue background
+                w-[100%]   -> Full width of the card
+                h-[150px]  -> Height of the header
+                flex flex-col -> Arranges contents vertically
+                items-center -> Centers the image horizontally
+                rounded-2xl -> Rounded corners
+            -->
             <div class="bg-blue-500 w-[100%] h-[150px] text-center flex flex-col items-center rounded-2xl">
-                <img class="rounded-full border-2 border-solid border-white p-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6JfUI1F56Nl6d4qdhlLaEuWpSeqx4FGhGDzx1aPvXEA&s=10" width="100" height="100"/>
+
+                <!-- Profile image -->
+                <!-- rounded-full -> Makes the image circular -->
+                <!-- border-2 border-white -> Adds a white border -->
+                <!-- p-1 -> Adds padding around the image -->
+                <img
+                    class="rounded-full border-2 border-solid border-white p-1"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6JfUI1F56Nl6d4qdhlLaEuWpSeqx4FGhGDzx1aPvXEA&s=10"
+                    width="100"
+                    height="100"
+                />
             </div>
-            <h2>Sarah Hatty</h2><br>
-            <p>This contains profile information about the user</p><br>
+
+            <!-- Profile name -->
+            <h2>Sarah Hatty</h2>
+
+            <!-- Adds vertical spacing -->
+            <br>
+
+            <!-- Short profile description -->
+            <p>This contains profile information about the user</p>
+
+            <!-- Adds vertical spacing -->
+            <br>
+
+            <!-- Button for viewing additional profile information -->
             <button class="rounded-xl bg-blue-500 p-2">View More</button>
         </div>
+
+
+        <!-- ================= PROFILE CARD 2 ================= -->
+
+        <!-- Main profile card -->
         <div class="border-2 border-solid border-black w-[300px] h-[350px] text-center flex flex-col items-center">
+
+            <!-- Header section containing the profile image -->
             <div class="bg-blue-500 w-[100%] h-[150px] text-center flex flex-col items-center rounded-2xl">
-                <img class="rounded-full border-2 border-solid border-white p-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUrbs0cqbTBobZo90D-yoc70EanwiRbpm22JlRMfKpRg&s=10" width="100" height="100"/>
+
+                <!-- Profile image -->
+                <img
+                    class="rounded-full border-2 border-solid border-white p-1"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUrbs0cqbTBobZo90D-yoc70EanwiRbpm22JlRMfKpRg&s=10"
+                    width="100"
+                    height="100"
+                />
             </div>
-            <h2>Donny Clave</h2><br>
-            <p>This contains profile information about the user</p><br>
+
+            <!-- Profile name -->
+            <h2>Donny Clave</h2>
+
+            <!-- Adds vertical spacing -->
+            <br>
+
+            <!-- Short profile description -->
+            <p>This contains profile information about the user</p>
+
+            <!-- Adds vertical spacing -->
+            <br>
+
+            <!-- Button for viewing additional profile information -->
             <button class="rounded-xl bg-blue-500 p-2">View More</button>
         </div>
+
+
+        <!-- ================= PROFILE CARD 3 ================= -->
+
+        <!-- Main profile card -->
         <div class="border-2 border-solid border-black w-[300px] h-[350px] text-center flex flex-col items-center">
+
+            <!-- Header section containing the profile image -->
             <div class="bg-blue-500 w-[100%] h-[150px] text-center flex flex-col items-center rounded-2xl">
-                <img class="rounded-full border-2 border-solid border-white p-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHOMO_JgOi1kKXtkaaBk7b7-dyOGzuvuKbrcCIhKkkyQ&s=10" width="100" height="100"/>
+
+                <!-- Profile image -->
+                <img
+                    class="rounded-full border-2 border-solid border-white p-1"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHOMO_JgOi1kKXtkaaBk7b7-dyOGzuvuKbrcCIhKkkyQ&s=10"
+                    width="100"
+                    height="100"
+                />
             </div>
-            <h2>Kiara Sandy</h2><br>
-            <p>This contains profile information about the user</p><br>
+
+            <!-- Profile name -->
+            <h2>Kiara Sandy</h2>
+
+            <!-- Adds vertical spacing -->
+            <br>
+
+            <!-- Short profile description -->
+            <p>This contains profile information about the user</p>
+
+            <!-- Adds vertical spacing -->
+            <br>
+
+            <!-- Button for viewing additional profile information -->
             <button class="rounded-xl bg-blue-500 p-2">View More</button>
         </div>
+
     </div>
+
 </body>
 </html>
