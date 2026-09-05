@@ -1,76 +1,180 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive on different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
+
     <script>
+        // Displays an alert when the "Click Me" button is clicked
         function clicked() {
             alert("You ckicked a button")
         }
+
+        // Displays a success message when the Save button is clicked
         function save() {
             alert("Saved changes successfully")
         }
+
+        // Changes the heading text and its background/text color when clicked
         function back() {
-            let ele=document.getElementById("id1")
-            ele.innerHTML="Homepage"
-            ele.style.backgroundColor="purple"
-            ele.style.color="yellow"
+            let ele = document.getElementById("id1")
+            ele.innerHTML = "Homepage"
+            ele.style.backgroundColor = "purple"
+            ele.style.color = "yellow"
         }
+
+        // Displays a message when the mouse pointer moves over the image
         function over() {
             alert("It's an art design")
         }
+
+        // Displays a message when the mouse pointer leaves the image
         function out() {
             alert("Pick any picture")
         }
+
+        // Displays a message whenever the mouse moves over the image
         function moved() {
             alert("Mouse has moved")
         }
+
+        // Changes the username input background color when a key is released
         function up() {
-            document.getElementById("id2").style.backgroundColor="deeppink"
+            document.getElementById("id2").style.backgroundColor = "deeppink"
         }
+
+        // Changes the username input background color when a key is pressed
         function down() {
-            document.getElementById("id2").style.backgroundColor="green"
+            document.getElementById("id2").style.backgroundColor = "green"
         }
+
+        // Changes the input background color when the field receives focus
         function focused(e1) {
-            e1.style.backgroundColor="SeaGreen"
+            e1.style.backgroundColor = "SeaGreen"
         }
+
+        // Changes the input background color when the field loses focus
         function blurred(e1) {
-            e1.style.backgroundColor="DodgerBlue"
+            e1.style.backgroundColor = "DodgerBlue"
         }
+
+        // Changes the input border and displays a message when its value is changed
         function change(e1) {
-            e1.style.border="2px solid Indigo"
+            e1.style.border = "2px solid Indigo"
             alert("Username is changed")
         }
+
+        // Displays a message when the form is submitted
         function done() {
             alert("Form submitted successfully")
         }
+
+        // Displays a message when the form is reset
         function again() {
             alert("Form resetted successfully")
         }
+
+        // Displays a welcome message when the page is loaded
         function load() {
             alert("How can we serve you?")
         }
     </script>
 </head>
+
 <body>
+
+    <!-- Button click event -->
     <button onclick="clicked()">Click Me</button>
+
+    <!-- Calls the save() function when clicked -->
     <button onclick="save()">Save</button>
+
+    <!-- Calls back() when the heading is clicked -->
     <h2 onclick="back()" id="id1">Hello, Welcome</h2>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSukIcYHIwokXoEeehciZrjNCU0FumLZY_0GltgZ6kR2Q&s=10" width="500" height="300" 
-    onmouseover="over()" onmouseout="out()" onmousemove="moved()"/><br><br>
+
+    <!--
+        Image events:
+        onmouseover - triggered when mouse enters the image
+        onmouseout  - triggered when mouse leaves the image
+        onmousemove - triggered when mouse moves over the image
+    -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSukIcYHIwokXoEeehciZrjNCU0FumLZY_0GltgZ6kR2Q&s=10"
+         width="500"
+         height="300"
+         onmouseover="over()"
+         onmouseout="out()"
+         onmousemove="moved()" />
+
+    <br><br>
+
     <label>Username</label>
-    <input type="text" placeholder="username" id="id2" onkeyup="up()" onkeydown="down()" /><br><br>
+
+    <!--
+        Keyboard events:
+        onkeyup   - triggered when a keyboard key is released
+        onkeydown - triggered when a keyboard key is pressed
+    -->
+    <input type="text"
+           placeholder="username"
+           id="id2"
+           onkeyup="up()"
+           onkeydown="down()" />
+
+    <br><br>
+
+    <!--
+        Form events:
+        onsubmit - called when the form is submitted
+        onreset  - called when the form is reset
+    -->
     <form onsubmit="done()" onreset="again()">
+
         <label>Username</label>
-        <input type="text" placeholder="username" value="user" onchange="change(this)" onfocus="focused(this)" onblur="blurred(this)" required />
+
+        <!--
+            onchange - called when the input value changes
+            onfocus  - called when the input receives focus
+            onblur   - called when the input loses focus
+            required - makes the field mandatory
+        -->
+        <input type="text"
+               placeholder="username"
+               value="user"
+               onchange="change(this)"
+               onfocus="focused(this)"
+               onblur="blurred(this)"
+               required />
+
         <label>Password</label>
-        <input type="text" placeholder="password" onfocus="focused(this)" onblur="blurred(this)" required />
+
+        <!-- Focus and blur events are applied to the password field -->
+        <input type="text"
+               placeholder="password"
+               onfocus="focused(this)"
+               onblur="blurred(this)"
+               required />
+
+        <!-- Submits the form -->
         <input type="submit" />
+
+        <!-- Resets all form fields -->
         <input type="reset" />
+
     </form>
-</body>
-<body onload="load()">
+
+    <!-- Main content of the webpage -->
     <h2>Welcome to our hotel</h2>
+
+    <script>
+        // Calls the load() function when the webpage finishes loading
+        load()
+    </script>
+
 </body>
 </html>
+```
