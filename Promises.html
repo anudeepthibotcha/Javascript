@@ -1,141 +1,439 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
+        /* Adds spacing around the heading */
         h2 {
             padding: 10px;
         }
     </style>
 </head>
+
 <body>
+
+    <!-- This heading is used to display dynamic content using JavaScript -->
     <h2 id="id1"></h2>
+
     <script>
-        /*var e=`Hello Morni, \ngoood morning`
-        a=/[go+d]/g
-        document.write(a.test(e)+"<br/>")
-        document.write(e.match(a)+"<br/>")*/
-        /*document.write(e.search(a)+"<br/>")
-        document.write(e.replace('morning','afternoon')+"<br/>")*/
-        /*var ph=prompt("Enter phone number: ")
-        p=/^[0-9]{10}$/
-        if(p.test(ph)) {
+        /*
+        ==========================================
+        REGULAR EXPRESSIONS
+        ==========================================
+
+        Regular expressions are patterns used to search,
+        match, validate, or replace text.
+        */
+
+        /*
+        var e = `Hello Morni, \ngoood morning`
+
+        // [go+d] searches for characters based on the given pattern
+        a = /[go+d]/g
+
+        // test() checks whether the pattern is found
+        document.write(a.test(e) + "<br/>")
+
+        // match() returns the matching values
+        document.write(e.match(a) + "<br/>")
+        */
+
+        /*
+        // search() returns the position of the matching text
+        document.write(e.search(a) + "<br/>")
+
+        // replace() replaces the first matching word
+        document.write(e.replace('morning', 'afternoon') + "<br/>")
+        */
+
+        /*
+        ==========================================
+        PHONE NUMBER VALIDATION
+        ==========================================
+        */
+
+        /*
+        // Takes phone number input from the user
+        var ph = prompt("Enter phone number: ")
+
+        // ^ -> beginning of string
+        // [0-9] -> allows digits from 0 to 9
+        // {10} -> exactly 10 digits
+        // $ -> end of string
+        p = /^[0-9]{10}$/
+
+        // test() checks whether the phone number matches the pattern
+        if (p.test(ph)) {
             alert("phone number is valid")
         }
         else {
             alert("phone number is invalid")
-        }*/
-        /*var un=prompt("Enter username: ")
-        u=/^[a-zA-Z0-9]{8,16}$/
-        if(u.test(un)) {
+        }
+        */
+
+        /*
+        ==========================================
+        USERNAME VALIDATION
+        ==========================================
+        */
+
+        /*
+        // Gets username from the user
+        var un = prompt("Enter username: ")
+
+        // Allows only letters and numbers
+        // Username length must be between 8 and 16 characters
+        u = /^[a-zA-Z0-9]{8,16}$/
+
+        if (u.test(un)) {
             alert("Username is valid")
         }
         else {
             alert("Username must conatain 8-16 characters")
-        }*/
-        /*var name=prompt("Enter name: ")
-        n=/^[A-Za-z]+[ A-Za-z]*[A-Za-z]+/
-        if(n.test(name)) {
+        }
+        */
+
+        /*
+        ==========================================
+        NAME VALIDATION
+        ==========================================
+        */
+
+        /*
+        var name = prompt("Enter name: ")
+
+        // Allows alphabets and spaces between words
+        n = /^[A-Za-z]+[ A-Za-z]*[A-Za-z]+/
+
+        if (n.test(name)) {
             alert("Name is valid")
         }
         else {
             alert("Name is invalid")
-        }*/
-        /*var pw=prompt("Enter password: ")
-        p=/^[A-Za-z0-9]+[@#$%&*_]+[A-Za-z0-9@#$%&*]/
-        p1=/^[A-Z]{1}+[A-Za-z@#$%&*_]+[0-9]{2}/
-        if(p.test(pw)) {
+        }
+        */
+
+        /*
+        ==========================================
+        PASSWORD VALIDATION
+        ==========================================
+        */
+
+        /*
+        var pw = prompt("Enter password: ")
+
+        // Checks for alphabets/numbers followed by
+        // one or more special characters
+        p = /^[A-Za-z0-9]+[@#$%&*_]+[A-Za-z0-9@#$%&*]/
+
+        // Another password pattern:
+        // Starts with an uppercase letter
+        // Contains letters/special characters
+        // Ends with two digits
+        p1 = /^[A-Z]{1}+[A-Za-z@#$%&*_]+[0-9]{2}/
+
+        if (p.test(pw)) {
             alert("Valid password")
         }
         else {
             alert("Invalid password")
-        }*/
-       /*const fruit=['apple','banana','grapes','berries','kiwi','pear','mango','orange']
-       const [a,b,c]=fruit
-       document.write(c+"<br/>")
-       const int=[-4,-17,13,-21,38,26,-49]
-       const [d,e,f,g]=int
-       document.write(e+"<br/>")
-       const car={name:"BMW",color:"black",price:30000}
-       const {name,color,price}=car
-       document.write(color+"<br/>")*/
+        }
+        */
+
+        /*
+        ==========================================
+        ARRAY AND OBJECT DESTRUCTURING
+        ==========================================
+        */
+
+        /*
+        // Array containing different fruits
+        const fruit = [
+            'apple',
+            'banana',
+            'grapes',
+            'berries',
+            'kiwi',
+            'pear',
+            'mango',
+            'orange'
+        ]
+
+        // Destructuring extracts values from the array
+        const [a, b, c] = fruit
+
+        // Displays the third element
+        document.write(c + "<br/>")
+
+
+        // Another array containing integers
+        const int = [-4, -17, 13, -21, 38, 26, -49]
+
+        // Extracts the first four values
+        const [d, e, f, g] = int
+
+        // Displays the second value
+        document.write(e + "<br/>")
+
+
+        // Object containing car details
+        const car = {
+            name: "BMW",
+            color: "black",
+            price: 30000
+        }
+
+        // Object destructuring extracts properties
+        const {name, color, price} = car
+
+        // Displays the color of the car
+        document.write(color + "<br/>")
+        */
     </script>
+
+
     <script>
-        async function info(name,age) {
-            document.write(`My name is ${name} and am ${age}`+"<br/>")
+
+        /*
+        ==========================================
+        ASYNC FUNCTION
+        ==========================================
+        */
+
+        // async allows a function to work with Promises
+        async function info(name, age) {
+
+            // Template literals allow variables to be inserted directly
+            // into a string using ${variable}
+            document.write(`My name is ${name} and am ${age}` + "<br/>")
         }
-        info('Goofy','45')
+
+        // Calling the async function
+        info('Goofy', '45')
+
+
+        /*
+        ==========================================
+        NORMAL FUNCTION
+        ==========================================
+        */
+
+        // Simple function that displays a message
         function done() {
-            document.write("Identity checked"+"<br/>")
+            document.write("Identity checked" + "<br/>")
         }
+
+        // Calling the function
         done()
+
+
+        /*
+        ==========================================
+        PROMISE WITH ASYNC/AWAIT
+        ==========================================
+        */
+
+        // This function returns a Promise
         function data() {
-            return new Promise((resolve,reject)=>{
-                setInterval(()=>resolve("Data Checked successfully"),2000)
+
+            return new Promise((resolve, reject) => {
+
+                // setInterval() waits for 2 seconds before resolving
+                setInterval(() => resolve("Data Checked successfully"), 2000)
             })
         }
+
+
+        // async function used to handle the Promise
         async function get() {
-            document.write("loading...."+"<br/>")
-            let res=await data()
-            document.write(res+"<br/>")
-            document.write("Data checked"+"<br/>")
+
+            // Displays a loading message
+            document.write("loading...." + "<br/>")
+
+            // await pauses execution until the Promise is resolved
+            let res = await data()
+
+            // Displays the result after the Promise is completed
+            document.write(res + "<br/>")
+
+            // Final confirmation message
+            document.write("Data checked" + "<br/>")
         }
+
+        // Calling the async function
         get()
+
+
+        /*
+        ==========================================
+        TASK 1
+        ==========================================
+        */
+
+        // Returns a Promise representing the first task
         function task1() {
-            return new Promise((resolve,reject)=>{
-                let status=true
-                if(status) {
-                    setInterval(()=>resolve("First Task completed"+"<br/>"),3000)
+
+            return new Promise((resolve, reject) => {
+
+                // Boolean value represents task status
+                let status = true
+
+                if (status) {
+
+                    // Resolves the Promise after 3 seconds
+                    setInterval(
+                        () => resolve("First Task completed" + "<br/>"),
+                        3000
+                    )
                 }
                 else {
-                    setInterval(()=>resolve("First Task yet to be completed"+"<br/>"),3000)
+
+                    // Message displayed when task is incomplete
+                    setInterval(
+                        () => resolve("First Task yet to be completed" + "<br/>"),
+                        3000
+                    )
                 }
             })
         }
+
+
+        /*
+        ==========================================
+        TASK 2
+        ==========================================
+        */
+
+        // Returns a Promise representing the second task
         function task2() {
-            return new Promise((resolve,reject)=>{
-                let status=false
-                if(status) {
-                    setInterval(()=>resolve("Second Task completed"+"<br/>"),4000)
+
+            return new Promise((resolve, reject) => {
+
+                // This task is currently marked as false
+                let status = false
+
+                if (status) {
+
+                    // Resolves after 4 seconds
+                    setInterval(
+                        () => resolve("Second Task completed" + "<br/>"),
+                        4000
+                    )
                 }
                 else {
-                    setInterval(()=>resolve("Second Task yet to be completed"+"<br/>"),4000)
+
+                    // Displays that the task is still incomplete
+                    setInterval(
+                        () => resolve("Second Task yet to be completed" + "<br/>"),
+                        4000
+                    )
                 }
             })
         }
+
+
+        /*
+        ==========================================
+        EXECUTING TASKS SEQUENTIALLY
+        ==========================================
+        */
+
         async function load() {
-            document.write("loading...."+"<br/>")
+
+            // Displays loading message
+            document.write("loading...." + "<br/>")
+
+            // Waits for Task 1 to complete
             await task1()
-            .then((res)=>document.write(res)+"<br/>")
-            .catch((err)=>document.write(err)+"<br/>")
+                .then((res) => document.write(res) + "<br/>")
+                .catch((err) => document.write(err) + "<br/>")
+
+            // Waits for Task 2 after Task 1
             await task2()
-            .then((res)=>document.write(res)+"<br/>")
-            .catch((err)=>document.write(err)+"<br/>")
-            document.write("Tasks completed"+"<br/>")
+                .then((res) => document.write(res) + "<br/>")
+                .catch((err) => document.write(err) + "<br/>")
+
+            // Displays final message
+            document.write("Tasks completed" + "<br/>")
         }
+
+        // Starts the task execution
         load()
+
+
+        /*
+        ==========================================
+        ACCEPT FUNCTION
+        ==========================================
+        */
+
         function accept() {
-            return new Promise((resolve,reject)=>{
-                setInterval(()=>resolve("Accepting..."),3000)
+
+            return new Promise((resolve, reject) => {
+
+                // Resolves the Promise after 3 seconds
+                setInterval(() => resolve("Accepting..."), 3000)
             })
         }
+
+
+        /*
+        ==========================================
+        CONFIRM FUNCTION
+        ==========================================
+        */
+
         function conf() {
-            return new Promise((resolve,reject)=>{
-                setInterval(()=>resolve("Confirm"),3000)
+
+            return new Promise((resolve, reject) => {
+
+                // Resolves the Promise after 3 seconds
+                setInterval(() => resolve("Confirm"), 3000)
             })
         }
+
+
+        /*
+        ==========================================
+        DOM MANIPULATION WITH ASYNC/AWAIT
+        ==========================================
+        */
+
         async function loade() {
-            let res=document.getElementById("id1")
-            res.innerHTML="loading...."
-            res.style.backgroundColor="red"
-            res.innerHTML=await accept()
-            res.style.backgroundColor="yellow"
-            res.innerHTML=await conf()
-            res.style.backgroundColor="green"
+
+            // Gets the <h2> element using its id
+            let res = document.getElementById("id1")
+
+            // Displays loading text
+            res.innerHTML = "loading...."
+
+            // Changes the background color to red
+            res.style.backgroundColor = "red"
+
+            // Waits for the accept() Promise
+            // and displays the returned result
+            res.innerHTML = await accept()
+
+            // Changes the background color to yellow
+            res.style.backgroundColor = "yellow"
+
+            // Waits for the confirm() Promise
+            // and displays the returned result
+            res.innerHTML = await conf()
+
+            // Changes the background color to green
+            res.style.backgroundColor = "green"
         }
+
+        // Starts the asynchronous operation
         loade()
+
     </script>
+
 </body>
 </html>
+```
