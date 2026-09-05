@@ -1,10 +1,16 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive on different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
+
     <style>
+        /* Popup container styling */
         #pop {
             border: 3px solid black;
             border-radius: 10px;
@@ -12,19 +18,29 @@
             width: 400px;
             height: fit-content;
             padding: 10px;
+
+            /* Positions the popup relative to the page */
             position: absolute;
             left: 35%;
+
+            /* Popup is hidden initially */
             display: none;
         }
+
+        /* Centers the buttons inside the popup */
         #b {
             margin-left: 165px;
         }
+
+        /* Styling for popup action buttons */
         #b button {
             color: black;
             background-color: coral;
             padding: 5px;
             border-radius: 10px;
         }
+
+        /* Styling for the popup close button */
         #close {
             color: white;
             background-color: red;
@@ -35,40 +51,90 @@
         }
     </style>
 </head>
+
 <body>
+
+    <!-- Button that displays a success message when clicked -->
     <button id="id1">Click</button>
+
+    <!-- Button that shows a save message and changes color on mouse events -->
     <button id="id2">Save</button>
+
+    <!-- Text input field -->
     <input type="text" id="id3" />
+
     <script>
-        let b1=document.getElementById("id1")
-        b1.addEventListener('click',function clicked() {
-            alert("Submitted Successfully")
-        })
-        let b2=document.getElementById("id2")
-        b2.addEventListener('click',()=>alert("Saved Successfully"))
-        b2.addEventListener('mouseover',()=>b2.style.backgroundColor="orange")
-        b2.addEventListener('mouseout',()=>b2.style.backgroundColor="green")
-        let i1=document.getElementById("id3")
-        i1.addEventListener('focus',()=>i1.style.backgroundColor="blue")
-    </script><br><br>
+        // Select the "Click" button using its ID
+        let b1 = document.getElementById("id1");
+
+        // Show an alert when the Click button is pressed
+        b1.addEventListener('click', function clicked() {
+            alert("Submitted Successfully");
+        });
+
+        // Select the "Save" button
+        let b2 = document.getElementById("id2");
+
+        // Display a message when the Save button is clicked
+        b2.addEventListener('click', () => alert("Saved Successfully"));
+
+        // Change the button color when the mouse moves over it
+        b2.addEventListener('mouseover', () => b2.style.backgroundColor = "orange");
+
+        // Change the button color when the mouse leaves it
+        b2.addEventListener('mouseout', () => b2.style.backgroundColor = "green");
+
+        // Select the text input field
+        let i1 = document.getElementById("id3");
+
+        // Change the input background color when it receives focus
+        i1.addEventListener('focus', () => i1.style.backgroundColor = "blue");
+    </script>
+
+    <br><br>
+
+    <!-- Popup box containing a message and action buttons -->
     <div id="pop">
+
+        <!-- Close button for hiding the popup -->
         <button id="close">X</button>
+
         <h2>Hello User</h2>
         <p>Do you want to see this page?</p>
+
+        <!-- Contains the popup action buttons -->
         <div id="b">
             <button id="id4">No Thanks and Exit</button>
             <button id="id5">Continue</button>
         </div>
     </div>
+
+    <!-- Button used to display the popup -->
     <button id="id6">Show</button>
+
     <script>
-        let b3=document.getElementById("id6")
-        let pb=document.getElementById("pop")
-        b3.addEventListener('click',()=>pb.style.display="block")
-        let b4=document.getElementById("id4")
-        b4.addEventListener('click',()=>pb.style.display="none")
-        let b5=document.getElementById("close")
-        b5.addEventListener('click',()=>pb.style.display="none")
+        // Select the Show button
+        let b3 = document.getElementById("id6");
+
+        // Select the popup container
+        let pb = document.getElementById("pop");
+
+        // Display the popup when the Show button is clicked
+        b3.addEventListener('click', () => pb.style.display = "block");
+
+        // Select the "No Thanks and Exit" button
+        let b4 = document.getElementById("id4");
+
+        // Hide the popup when the user chooses No Thanks
+        b4.addEventListener('click', () => pb.style.display = "none");
+
+        // Select the popup's close button
+        let b5 = document.getElementById("close");
+
+        // Hide the popup when the X button is clicked
+        b5.addEventListener('click', () => pb.style.display = "none");
     </script>
+
 </body>
 </html>
+```
