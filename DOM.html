@@ -1,10 +1,16 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive on different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
+
     <style>
+        /* Styling for the div used for DOM manipulation */
         #id2 {
             border: 2px solid black;
             width: 300px;
@@ -12,64 +18,139 @@
         }
     </style>
 </head>
+
 <body>
-    <img id="id1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8C191JdCh-vLaAF570ZX04NesIpQl7WQUtRcl0pkDuw&s=10" width="300" height="200" /><br><br>
+
+    <!-- Displays the initial image -->
+    <img id="id1"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8C191JdCh-vLaAF570ZX04NesIpQl7WQUtRcl0pkDuw&s=10"
+         width="300"
+         height="200" />
+
+    <br><br>
+
+    <!-- Buttons used to perform different JavaScript operations -->
     <button onclick="change()">Change</button>
     <button onclick="undo()">Undo</button>
     <button onclick="inc()">+</button>
     <button onclick="dec()">-</button>
-    <button onclick="add()">Add Attribute</button><br><br>
-    <div id="id2">
+    <button onclick="add()">Add Attribute</button>
 
-    </div><br><br>
+    <br><br>
+
+    <!-- Div used to demonstrate create, replace and remove DOM elements -->
+    <div id="id2">
+    </div>
+
+    <br><br>
+
+    <!-- Input field for entering To-Do items -->
     <input type="text" id="input" value="todo"/>
+
+    <!-- Button used to add the entered item to the list -->
     <button id="add1">+</button>
+
+    <!-- Empty unordered list where To-Do items will be added dynamically -->
     <ul id="id3">
-        
     </ul>
+
     <script>
+
+        // Changes the image source to another image
         function change() {
-            document.querySelector("#id1").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7zDMYnGheNT1l7pEW3R5N3Uf4--yCjRprCG9W5WQ58g&s=10"
+            document.querySelector("#id1").src =
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7zDMYnGheNT1l7pEW3R5N3Uf4--yCjRprCG9W5WQ58g&s=10";
         }
+
+        // Restores the original image
         function undo() {
-            document.querySelector("#id1").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8C191JdCh-vLaAF570ZX04NesIpQl7WQUtRcl0pkDuw&s=10"
+            document.querySelector("#id1").src =
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8C191JdCh-vLaAF570ZX04NesIpQl7WQUtRcl0pkDuw&s=10";
         }
+
+        // Increases the image width and height by 10 pixels
         function inc() {
-            pic=document.querySelector("#id1")
-            w=pic.width
-            h=pic.height
-            pic.width=w+10
-            pic.height=h+10
+            let pic = document.querySelector("#id1");
+            let w = pic.width;
+            let h = pic.height;
+
+            pic.width = w + 10;
+            pic.height = h + 10;
         }
+
+        // Decreases the image width and height by 10 pixels
         function dec() {
-            pic=document.querySelector("#id1")
-            w=pic.width
-            h=pic.height
-            pic.width=w-10
-            pic.height=h-10
+            let pic = document.querySelector("#id1");
+            let w = pic.width;
+            let h = pic.height;
+
+            pic.width = w - 10;
+            pic.height = h - 10;
         }
+
+        // Adds new attributes to the image using setAttribute()
         function add() {
-            document.querySelector("#id1").setAttribute('alt','no-image')
-            document.querySelector("#id1").setAttribute('class','c1')
+            // Adds alternate text to the image
+            document.querySelector("#id1").setAttribute('alt', 'no-image');
+
+            // Adds a CSS class to the image
+            document.querySelector("#id1").setAttribute('class', 'c1');
         }
-        let e1=document.createElement("h2")
-        e1.innerHTML="Dynamic"
-        let d1=document.querySelector("#id2")
-        d1.appendChild(e1)
-        let e2=document.createElement("h3")
-        e2.innerHTML="Position"
-        d1.replaceChild(e2,e1)
-        d1.removeChild(e2)
-        let add1=document.querySelector("#add1")
-        let input=document.querySelector("#input")
-        let ul=document.querySelector("#id3")
-        add1.addEventListener('click',()=>{
-            data=input.value
-            let li=document.createElement('li')
-            li.innerHTML=data
-            ul.appendChild(li)
-            input.value=""
-        })
+
+
+        // Creates a new <h2> element dynamically
+        let e1 = document.createElement("h2");
+
+        // Adds text inside the newly created heading
+        e1.innerHTML = "Dynamic";
+
+        // Selects the div where the new element will be inserted
+        let d1 = document.querySelector("#id2");
+
+        // Adds the <h2> element inside the div
+        d1.appendChild(e1);
+
+
+        // Creates a new <h3> element
+        let e2 = document.createElement("h3");
+
+        // Adds text to the new <h3> element
+        e2.innerHTML = "Position";
+
+        // Replaces the existing <h2> element with the new <h3> element
+        d1.replaceChild(e2, e1);
+
+        // Removes the <h3> element from the div
+        d1.removeChild(e2);
+
+
+        // Selects the Add button, input field and unordered list
+        let add1 = document.querySelector("#add1");
+        let input = document.querySelector("#input");
+        let ul = document.querySelector("#id3");
+
+
+        // Executes when the + button is clicked
+        add1.addEventListener('click', () => {
+
+            // Gets the value entered by the user
+            let data = input.value;
+
+            // Creates a new list item dynamically
+            let li = document.createElement('li');
+
+            // Adds the entered text to the list item
+            li.innerHTML = data;
+
+            // Adds the new list item to the unordered list
+            ul.appendChild(li);
+
+            // Clears the input field after adding the item
+            input.value = "";
+        });
+
     </script>
+
 </body>
 </html>
+```
